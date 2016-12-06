@@ -34,8 +34,28 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
-}
+	var arefh = $("<a/>", {'class': 'item-recipe'});
+	var span1 = $("<span/>", {'class': 'attribution'});
+	var span2 = $("<span/>", {'class': 'title-recipe'}); 
+	span2.text(recipe.title);
+	var span3 = $("<span/>", {'class': 'metadata-recipe'});
+	var span4 = $("<span/>", {'class': 'author-recipe'});
+	span4.text(recipe.source.name);
+	var span5 = $("<span/>", {'class': 'bookmarks-recipe'});
+	var span6 = $("<span/>", {'class': 'icon-bookmark'});
+	var imageRece = $("<img/>", {'src': 'img/recipes/320x350/'+recipe.name+'.jpg'});
+	//<img src="../img/recipes/320x350/spring-spanish-asparagus-revuelto.jpg"/>"
+	$(".list-recipes").append(arefh);
+	$(arefh).append(span1);
+	$(span1).append(span2);
+	$(span2).after(span3);
+	$(span3).append(span4);
+	$(span4).after(span5);
+	$(span5).append(span6);
+	$(span1).after(imageRece);
 
+}
+	//$(recipes).appendTo(".list-recipes");
 
 
 /*
