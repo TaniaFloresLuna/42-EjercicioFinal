@@ -1,12 +1,12 @@
 $(document).ready( function(){
 
-	console.log("¡Estoy listo!");
+	//console.log("¡Estoy listo!");
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 		//Esconde flecha junto a menu
 	$(".js-back").hide();
-	printNews();
+	//printNews();
 
 
 
@@ -14,7 +14,7 @@ $(document).ready( function(){
 		//$("#newRecipes").text("Nuevas Recetas");
 	}
 
-	// renderActivities(activitiesArray);
+	 renderActivities(activitiesArray);
 
 });
 
@@ -70,13 +70,13 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	
-/*	console.log('Activities: ', activitiesArray);
+	console.log('Activities: ', activitiesArray);
 	if (activitiesArray.length >= 0) {
 		$(".wrapper-message").hide();	
-
-	}*/
+	}
 
 }
+
 
 
 /*
@@ -84,8 +84,41 @@ function renderActivities(activitiesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
-function renderActivity(recipe) {
+function renderActivity(activity) {
+
+console.log('Voy a pintar la actividad: ', activity);
+
+	var template =
+	'<a href="#" class="item-activity">' + 
+		'<span class="attribution">' +
+			'<span class="avatar">' +
+      			'<img src="<%= userAvatar %>" class="image-avatar">'+
+    		'</span>'+
+    		'<span class="meta">'+
+		      '<span class="author"><%= userName %></span> made'+ 
+		      '<span class="recipe"><%= recipeName %></span> <%= activity.text %>)'+ 
+		      '<span class="location">&mdash; <%= place %></span>'+
+		    '</span>' +
+		'</span>' +
+		'<div class="bg-image" style="background-image: url(&quot;<%= image %>&quot;)"></div>'+
+	'</a>';
+
+	var compiled = _.template(template);
+    var a = compiled ({activity:activity});
+    console.log(a);
+
+    var elemento = $(a);
+    $('.list-activities').append(elemento);
+
+
+ /*var xnombre = _.template(template);
+ var listaactivities = xnombre(recipe);
+	console.log('listaactivities ', listaactivities);
+	var elemento = $(listaactivities);
+
+	$('.list-activities').append(elemento);*/
+
 	
-
-
 }
+
+
