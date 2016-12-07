@@ -7,9 +7,13 @@ $(document).ready( function(){
 	printNews();
 
 
+
 	function printNews(){
 		$("#newRecipes").text("Nuevas Recetas");
 	}
+
+	renderActivities(activitiesArray);
+
 });
 
 /*
@@ -55,15 +59,21 @@ function renderRecipe(recipe) {
 	$(span1).after(imageRece);
 
 }
-	//$(recipes).appendTo(".list-recipes");
 
 
 /*
 * Función que se encarga de pintar todas las actividades
 */
 function renderActivities(activitiesArray) {
+	
 	console.log('Activities: ', activitiesArray);
+	if (activitiesArray.length >= 0) {
+		$(".wrapper-message").hide();	
+
+	}
+
 }
+
 
 /*
 * Función que se encarga de pintar una actividad
