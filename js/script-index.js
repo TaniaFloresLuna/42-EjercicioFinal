@@ -1,5 +1,7 @@
 $(document).ready( function(){
 
+	console.log("¡Estoy listo!");
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 		//Esconde flecha junto a menu
@@ -9,10 +11,10 @@ $(document).ready( function(){
 
 
 	function printNews(){
-		$("#newRecipes").text("Nuevas Recetas");
+		//$("#newRecipes").text("Nuevas Recetas");
 	}
 
-	renderActivities(activitiesArray);
+	// renderActivities(activitiesArray);
 
 });
 
@@ -21,13 +23,13 @@ $(document).ready( function(){
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	for (var i = 0; i < recipesArray.length; i++) {
+/*	for (var i = 0; i < recipesArray.length; i++) {
 		if (recipesArray[i].highlighted == true) {
 			console.log('Recipes: ', recipesArray[i]);
 			renderRecipe(recipesArray[i]);
 		}
 
-	}
+	}*/
 }
 
 /*
@@ -37,7 +39,7 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+/*	console.log('Voy a pintar la receta: ', recipe);
 	var arefh = $("<a/>", {'class': 'item-recipe'});
 	var span1 = $("<span/>", {'class': 'attribution'});
 	var span2 = $("<span/>", {'class': 'title-recipe'}); 
@@ -56,7 +58,9 @@ function renderRecipe(recipe) {
 	$(span3).append(span4);
 	$(span4).after(span5);
 	$(span5).append(span6);
-	$(span1).after(imageRece);
+	$(span1).after(imageRece);*/
+
+
 
 }
 
@@ -66,11 +70,11 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	
-	console.log('Activities: ', activitiesArray);
+/*	console.log('Activities: ', activitiesArray);
 	if (activitiesArray.length >= 0) {
 		$(".wrapper-message").hide();	
 
-	}
+	}*/
 
 }
 
@@ -82,4 +86,6 @@ function renderActivities(activitiesArray) {
 */
 function renderActivity(recipe) {
 	
+
+
 }
